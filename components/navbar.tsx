@@ -1,6 +1,7 @@
 import styles from "./navbar.module.scss";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface NavigationAnchor {
     header: string; // Header text for the navigation anchor
@@ -10,6 +11,12 @@ interface NavigationAnchor {
 const Navbar = (): JSX.Element => {
     const [scrollY, setScrollY] = useState<number>(0);
     const [showNavbar, toggleNavbar] = useState<boolean>(true);
+
+    const router = useRouter();
+
+    const handleLinkClick = (url: string) => {
+        router.push(url);
+    };
 
     // Array of navigation anchors
     const navigationAnchors: NavigationAnchor[] = [
@@ -60,7 +67,7 @@ const Navbar = (): JSX.Element => {
             >
                 <div className={styles.innerNavbar}>
                     {/* Navbar brand */}
-                    <Link href="/">
+                    <Link href="/" as="/">
                         <div className={styles.navbarBrandLeft}></div>
                         <div className={styles.navbarBrandRight}>
                             <br />
@@ -71,15 +78,15 @@ const Navbar = (): JSX.Element => {
                     <div className={styles.navbarRight}>
                         {navigationAnchors.map((anchor) => {
                             return (
-                                <Link
+                                <a
                                     className={styles.navbarRightA}
-                                    href={anchor.url}
                                     key={anchor.header}
+                                    onClick={()=> handleLinkClick(anchor.url)}
                                 >
                                     <span className={styles.whiteButton}>
                                         {anchor.header}
                                     </span>
-                                </Link>
+                                </a>
                             );
                         })}
                     </div>
