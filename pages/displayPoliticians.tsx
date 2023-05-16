@@ -16,6 +16,7 @@ interface PoliticianProps {
     county: string;
 }
 
+// PoliticianTable component represents the table displaying the list of politicians
 const PoliticianTable = ({ politicians }: { politicians: PoliticianProps[] }): JSX.Element => {
     return (
         <div className={styles.tableContainer}>
@@ -42,11 +43,11 @@ const PoliticianTable = ({ politicians }: { politicians: PoliticianProps[] }): J
         </div>
     );
 };
+
 const DisplayPoliticians = (): JSX.Element => {
     const [searchResults, setSearchResults] = useState<PoliticianProps[]>([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedParty, setSelectedParty] = useState("");
-
     const [politicians, setPoliticians] = useState<PoliticianProps[]>([]);
 
     // Function that loads all the data from the database
@@ -69,59 +70,46 @@ const DisplayPoliticians = (): JSX.Element => {
         getPoliticians();
     }, []);
 
-
-    // A function that sorts the politicians by name
+    // A function that filters and sorts the politicians based on search term and selected party
     useEffect(() => {
         const filterPoliticians = () => {
             const filtered = selectedParty
-              ? politicians.filter(politician => politician.party === selectedParty)
-              : politicians;
-          
-            if (searchTerm) {
-              const regex = new RegExp(searchTerm, "i");
-              setSearchResults(
-                filtered
-                  .filter(
-                    politician =>
-                      regex.test(politician.name) ||
-                      regex.test(politician.lastName) ||
-                      regex.test(politician.county)
+                ? politicians.filter(
+                      (politician) => politician.party === selectedParty
                   )
-                  .sort((a, b) => {
-                    const aLastName = (a.lastName || '').toLowerCase();
-                    const bLastName = (b.lastName || '').toLowerCase();
-                    if (aLastName < bLastName) {
-                      return -1;
-                    } else if (aLastName > bLastName) {
-                      return 1;
-                    } else {
-                      return 0;
-                    }
-                  })
-              );
-            } else {
-              setSearchResults(
-                filtered.sort((a, b) => {
-                  const aLastName = (a.lastName || '').toLowerCase();
-                  const bLastName = (b.lastName || '').toLowerCase();
-                  if (aLastName < bLastName) {
-                    return -1;
-                  } else if (aLastName > bLastName) {
-                    return 1;
-                  } else {
-                    return 0;
-                  }
-                })
-              );
-            }
-          };
-          
+                : politicians;
 
+            const regex = new RegExp(searchTerm, "i");
+            setSearchResults(
+                filtered
+                    .filter(
+                        (politician) =>
+                            regex.test(politician.name) ||
+                            regex.test(politician.lastName) ||
+                            regex.test(politician.county)
+                    )
+                    .sort((a, b) => {
+                        const aLastName = (a.lastName || "").toLowerCase();
+                        const bLastName = (b.lastName || "").toLowerCase();
+                        if (aLastName < bLastName) {
+                            return -1;
+                        } else if (aLastName > bLastName) {
+                            return 1;
+                        } else {
+                            return 0;
+                        }
+                    })
+            );
+        };
         filterPoliticians();
     }, [searchTerm, selectedParty, politicians]);
 
     return (
-        <EventPage title="Se politkere" description="" background={stortingLøve}>
+        <EventPage
+            title="Se politkere"
+            description=""
+            background={stortingLøve}
+        >
             <div className={styles.container}>
                 <select
                     value={selectedParty}
