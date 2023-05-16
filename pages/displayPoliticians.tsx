@@ -10,10 +10,10 @@ import stortingLøve from "../public/OsloLion.jpg";
 const db = getFirestore(app);
 
 interface PoliticianProps {
-    name: string;
-    lastName: string;
-    party: string;
-    county: string;
+    name: string; // Name of the politician
+    lastName: string; // Last name of the politician
+    party: string; // The party the politician represents
+    county: string; // What county the politician is from
 }
 
 // PoliticianTable component represents the table displaying the list of politicians

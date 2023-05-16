@@ -8,11 +8,11 @@ type PageProps = {
     children: React.ReactNode; // Content to be displayed inside the page
 };
 
-//The Page component is a layout component that sets up the basic structure of a page. 
-//It includes a Head component for setting metadata
-//A Navbar component at the top
-//The main content specified by the children prop
-//And a Footer component at the bottom
+// The Page component is a layout component that sets up the basic structure of a page. 
+// It includes a Head component for setting metadata
+// A Navbar component at the top
+// The main content specified by the children prop
+// And a Footer component at the bottom
 
 const Page: React.FC<PageProps> = ({ title, description, children }) => (
     <>
