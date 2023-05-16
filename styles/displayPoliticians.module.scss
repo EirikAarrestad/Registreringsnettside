@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.container {
+    padding-bottom: 130px;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+
+    input {
+        outline: none;
+        box-sizing: border-box;
+        border: 3px solid #ccc;
+        transition: border 0.5s;
+        margin: 2px 3px;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    select {
+        outline: none;
+        box-sizing: border-box;
+        border: 3px solid #ccc;
+        transition: border 0.5s;
+        margin: 2px 3px;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-weight: 400;
+        background-color: transparent;
+        font-size: 15px;
+    }
+}
+
+.tableContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    .table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 600px;
+        overflow-x: auto;
+
+        td,
+        th {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+    }
+}

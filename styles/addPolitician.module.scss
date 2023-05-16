@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.container {
+    padding-bottom: 130px;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+}
+
+.footerContainer {
+    width: 100%;
+    padding: 150px 10% 100px 10%;
+    color: black;
+    margin-top: -100px;
+    position: relative;
+    z-index: 10;
+    font-family: "Lato", sans-serif;
+}
+
+.footerSplitter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.inputForm {
+    margin-left: 75px;
+}
+
+@media screen and (max-width: 730px) {
+    .footerSplitter {
+        display: block;
+    }
+
+    .inputForm {
+        margin: 10px 0;
+    }
+}
+
+.inputForm input[type="text"] {
+    outline: none;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: border 0.5s;
+    transition: border 0.5s;
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-family: "roboto";
+    font-weight: 400;
+}
+.inputForm select {
+    outline: none;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: border 0.5s;
+    transition: border 0.5s;
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    background-color: transparent;
+}
+
+.inputForm select:focus {
+    border: 3px solid #91b7ca;
+}
+
+.inputForm input[type="text"]:focus {
+    border: 3px solid #91b7ca;
+}
+
+.inputForm button[type="button"] {
+    padding: 12px 20px;
+    background-color: #e23a1c;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    float: right;
+    transition: background-color 0.15s;
+}
+
+.inputForm button[type="button"]:hover {
+    background-color: #ac341f;
+}

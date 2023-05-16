@@ -1,0 +1,110 @@
+.jumbotronOverlay {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 3rem;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.overskrift {
+    text-align: center;
+
+    h1 {
+        font-family: "Miriam Libre", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: -0.03em;
+        margin-bottom: 0;
+        color: white;
+    }
+
+    hr {
+        width: 25%;
+        margin: 15px auto 0 0;
+        color: white;
+        height: 5px;
+        background-color: white;
+        border: 0;
+    }
+
+    p {
+        font-family: "Miriam Libre", sans-serif;
+        font-style: normal;
+        font-weight: 1;
+        letter-spacing: -0.03em;
+        margin-bottom: 0;
+        color: white;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .overskrift {
+        h1 {
+            font-size: 35px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        hr {
+            margin: -3px auto 0 0;
+            height: 2px;
+
+
+        }
+    }
+    .jumbotronOverlay {
+        top: 30%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .overskrift {
+        h1 {
+            font-size: 21px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5em;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .jumbotronOverlay {
+        top: 40%;
+    }
+
+    .overskrift {
+        h1 {
+            font-size: 22px;
+            line-height: 2em;
+        }
+        p {
+            font-size: 12px;
+            line-height: 1.5em;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .overskrift {
+        h1 {
+            font-size: 18px;
+            line-height: 2em;
+        }
+        p {
+            font-size: 12px;
+            line-height: 1.5em;
+        }
+    }
+}
+
+.eventPageWrapper {
+    margin: 50px 7.5%;
+}

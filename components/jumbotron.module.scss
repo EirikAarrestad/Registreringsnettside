@@ -1,0 +1,24 @@
+.jumbotron {
+    position: relative;
+    top: -10px;
+    overflow: hidden;
+    z-index: 3;
+    height: 120vh;
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 90%);
+}
+
+.jumbotronSmall {
+    height: 70vh;
+}
+
+@media screen and (max-width: 1000px) {
+    .jumbotron {
+        height: 40vh;
+    }
+}
+
+.darkIMG {
+    filter: brightness(0.4);
+    width: 100%;
+    height: auto;
+}
