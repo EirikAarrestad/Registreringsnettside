@@ -12,7 +12,7 @@ const Home = (): JSX.Element => {
             <div className={styles.container}>
                 <h1>Kort forklaring om nettsiden</h1>
                 <p>
-                    Dette er en nettside programert i{" "}
+                    Dette er en nettside programert i
                     <a href="https://nextjs.org/">NEXT.JS</a>, et rammeverk for
                     Javascript. Nettsiden har en responsiv navbar med 3 ulike
                     knapper; Hjem, Alle Politikere og Register Ny Politiker. Jeg

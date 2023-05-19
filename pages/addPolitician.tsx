@@ -17,9 +17,7 @@ const AddPolitician = (): JSX.Element => {
     });
 
     // Update the data state based on user input
-    const handleInput = (
-        event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-    ) => {
+    const handleInput = ( event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement> ) => {
         setData({ ...data, [event.target.name]: event.target.value });
     };
 
